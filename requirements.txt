@@ -1,3 +1,4 @@
 requests
 elevenlabs
 jupyter
+openai
