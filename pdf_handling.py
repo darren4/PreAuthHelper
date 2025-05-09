@@ -43,4 +43,5 @@ async def build_structured_form(template: str, data: str) -> str:
     return output
 
 
-asyncio.run(build_structured_form("make your own template", "prescribing you potatos twice a day"))
+if __name__ == "__main__":
+    asyncio.run(build_structured_form("make your own template", "prescribing you potatos twice a day"))
