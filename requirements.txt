@@ -2,3 +2,4 @@ requests
 elevenlabs
 jupyter
 openai
+flask
