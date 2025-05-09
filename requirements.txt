@@ -3,3 +3,4 @@ elevenlabs
 jupyter
 openai
 flask
+flask[async]
