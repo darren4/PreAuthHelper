@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreAuth Assistant</title>
+    <style>
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: #fff;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .top-bar {
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 24px 0 18px;
+            box-sizing: border-box;
+        }
+        .hamburger {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .hamburger span {
+            height: 3px;
+            background: #222;
+            margin: 3px 0;
+            border-radius: 2px;
+            width: 100%;
+            display: block;
+        }
+        .top-controls {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+        .toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 15px;
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 36px;
+            height: 18px;
+        }
+        .switch input { display: none; }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #eee;
+            border-radius: 18px;
+            transition: .2s;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 14px;
+            width: 14px;
+            left: 2px;
+            bottom: 2px;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: .2s;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+        }
+        input:checked + .slider {
+            background-color: #222;
+        }
+        input:checked + .slider:before {
+            transform: translateX(18px);
+        }
+        .globe {
+            font-size: 20px;
+            margin-left: 8px;
+            cursor: pointer;
+        }
+        .center-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #transcript {
+            margin-bottom: 24px;
+            font-size: 18px;
+            color: #222;
+            text-align: center;
+            min-height: 24px;
+        }
+        .record-button {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background-color: #FFD600;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            transition: background 0.2s;
+        }
+        .record-button.recording {
+            background-color: #FFB300;
+        }
+        .bottom-controls {
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 32px;
+            position: relative;
+        }
+        .mode-toggle {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        .mode-btn {
+            border: none;
+            background: #eee;
+            color: #222;
+            padding: 6px 18px;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .mode-btn.active {
+            background: #222;
+            color: #fff;
+        }
+        .begin-btn {
+            background: #FFD600;
+            color: #222;
+            border: none;
+            border-radius: 6px;
+            font-size: 17px;
+            padding: 12px 0;
+            width: 220px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .info {
+            position: absolute;
+            right: 18px;
+            bottom: -8px;
+            font-size: 20px;
+            color: #bbb;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+</body>
+</html> 

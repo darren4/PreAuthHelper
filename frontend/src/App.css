@@ -1,0 +1,215 @@
+body, #root, .App {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #fff;
+    margin: 0;
+    min-height: 100vh;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+.App {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+.top-bar {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px 0 16px;
+    box-sizing: border-box;
+    min-height: 40px;
+}
+.hamburger {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+.hamburger span {
+    height: 2px;
+    background: #222;
+    margin: 3px 0;
+    border-radius: 2px;
+    width: 100%;
+    display: block;
+}
+.top-controls {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 15px;
+}
+.switch input { display: none; }
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #eee;
+    border-radius: 15px;
+    transition: .2s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 11px;
+    width: 11px;
+    left: 2px;
+    bottom: 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: .2s;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+input:checked + .slider {
+    background-color: #222;
+}
+input:checked + .slider:before {
+    transform: translateX(15px);
+}
+.globe {
+    font-size: 16px;
+    margin-left: 4px;
+    cursor: pointer;
+}
+.center-stack {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.status-label {
+    margin-bottom: 18px;
+    font-size: 18px;
+    color: #008080;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+.record-button-teal {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: #008080;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    transition: background 0.2s;
+    display: block;
+    margin-bottom: 24px;
+    outline: none;
+    position: relative;
+}
+.record-button-teal.recording {
+    animation: pulse 1.2s infinite;
+    background-color: #009999;
+}
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0,128,128,0.2);
+    }
+    70% {
+        box-shadow: 0 0 0 18px rgba(0,128,128,0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0,128,128,0);
+    }
+}
+.transcript-block {
+    margin-top: 8px;
+    width: 320px;
+    max-width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.transcript-label {
+    font-size: 15px;
+    color: #008080;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+.transcript-area {
+    width: 100%;
+    min-height: 64px;
+    font-size: 16px;
+    border: 1.5px solid #008080;
+    border-radius: 7px;
+    padding: 10px;
+    resize: vertical;
+    font-family: inherit;
+    background: #f8fefe;
+    color: #222;
+    box-sizing: border-box;
+}
+.bottom-controls {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+.mode-toggle {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+.mode-btn {
+    border: none;
+    background: #eee;
+    color: #222;
+    padding: 4px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-weight: 400;
+}
+.mode-btn.active {
+    background: #008080;
+    color: #fff;
+}
+.begin-btn {
+    background: #008080;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    padding: 10px 0;
+    width: 180px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin-top: 2px;
+    letter-spacing: 0.01em;
+}
+.info {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    font-size: 18px;
+    color: #bbb;
+    cursor: pointer;
+    z-index: 2;
+}
